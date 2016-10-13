@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load i18n staticfiles blog_tags%}
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block title %}{% trans "Home" %}{% endblock %}
+
+{% block main %}
+<!--<div id="preloader">-->
+    <!--<div id="load"></div>-->
+<!--</div>-->
+<!-- /Section: intro -->
+<section id="intro">
+    <div class="slogan">
+        <h1> <span>常易舒<sup>TM</sup></span></h1>
+        <h2>大肠癌早期筛查，让生活更健康!</h2>
+    </div>
+</section>
+<!-- section colon-->
+<section id="colon" class="home-section text-center bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <h2>大肠癌</h2>
+                <p class="subtitle">使用常易舒<sup>TM</sup>大肠癌早期无创筛查服务</p>
+                <a href="/colon" class="hl-btn hl-btn-green">了解大肠癌</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section: services -->
+<section id="service" class="home-section text-left bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <h2>产品介绍</h2>
+                <p class="subtitle">基因技术提前数年发现癌前病变和大肠癌</p>
+                <div style="float: left">
+                    <a href="/product" class="hl-btn hl-btn-green">了解产品</a>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <img class="single-img" src="{% static "img/service.png" %}" alt="" />
+            </div>
+        </div>
+    </div>
+</section>
+<!-- process -->
+<section id="process" class="home-section text-right bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 sidebar">
+                    <img class="single-img" src="{% static "img/flow.png" %}" alt="">
+                </div>
+                <div class="col-sm-4 content text-right">
+                    <h2>使用流程</h2>
+                    <h3>无创无痛、简便易用</h3>
+                    <a href="/product/process" class="hl-btn hl-btn-green">查看使用方法</a>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- Section: report -->
+<section id="report" class="home-section text-left bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <h2>检测报告</h2>
+                <h3>精准、简明、易懂</h3>
+                <div style="float: left">
+                    <a href="/report" class="hl-btn hl-btn-green">报告优点</a>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <img class="single-img" src="{% static "img/feature.png" %}" alt="" />
+            </div>
+        </div>
+    </div>
+</section>
+<!-- new -->
+<section id="new" class="home-section text-left bg-info">
+    <div class="container ">
+        <div class="row ">
+            <div class="col-md-6">
+                <h1>行业动态</h1>
+                    {% blog_recent_posts limit=4 category="行业动态" as recent_posts %}
+                    {% if recent_posts %}
+                        {% for recent_post in recent_posts %}
+                            {% if forloop.first %}
+                            <div class="brief">
+                                <h3>
+                                    <a href="{{ recent_post.get_absolute_url }}" target="_blank">{{ recent_post.title }}</a>
+                                </h3>
+                                <p>{{ recent_post.description }}</p>
+                            </div>
+                            {% endif %}
+                            <ul class="infor-list">
+                            {% if forloop.counter > 1 %}
+                                <li><a href="{{ recent_post.get_absolute_url }}" target="_blank">{{ recent_post.title }}</a><span class="date">{{ recent_post.created }}</span></li>
+                            {% endif %}
+                            </ul>
+                        {% endfor %}
+                    {% endif %}
+                    <div style="float: right">
+                        <a href="/blog/category/industry" class="hl-btn hl-btn-green">了解更多</a>
+                    </div>
+            </div>
+            <div class="col-md-6">
+                <h1>公司新闻</h1>
+                    {% blog_recent_posts limit=4 category="公司新闻" as recent_posts %}
+                    {% if recent_posts %}
+                        {% for recent_post in recent_posts %}
+                            {% if forloop.first %}
+                                <h3>
+                                    <a href="{{ recent_post.get_absolute_url }}" target="_blank">{{ recent_post.title }}</a>
+                                </h3>
+                                <p>{{ recent_post.description }}</p>
+                            {% endif %}
+                            <ul>
+                            {% if forloop.counter > 1 %}
+                                <li>
+                                    <a href="{{ recent_post.get_absolute_url }}" target="_blank">{{ recent_post.title }}</a>
+                                    <span class="date">{{ recent_post.created }}</span>
+                                </li>
+                            {% endif %}
+                            </ul>
+                        {% endfor %}
+                    {% endif %}
+                    <div style="float: right">
+                        <a href="/blog/category/news" class="hl-btn hl-btn-green">了解更多</a>
+                    </div>
+                </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</section>
+<!-- Section: FAQ -->
+<section id="FAQ" class="home-section .text-left bg-gray">
+    <div class="container ">
+        <div class="row ">
+            <div class="col-md-12">
+                    <h1>常见问题</h1>
+                        {% blog_recent_posts limit=1 category="faq" as recent_posts %}
+                        {% if recent_posts %}
+                            {% for recent_post in recent_posts %}
+                                <h4><a href="{{ recent_post.get_absolute_url }}" target="_blank">{{ recent_post.title }}</a></h4>
+                                <p>{{ recent_post.description }}</p>
+                            {% endfor %}
+                        {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
