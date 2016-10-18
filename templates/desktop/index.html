@@ -11,7 +11,7 @@
 <!-- /Section: intro -->
 <section id="intro">
     <div class="slogan">
-        <h1> <span>常易舒<sup>TM</sup></span></h1>
+        <h1><span>常易舒<sup>TM</sup></span></h1>
         <h2>大肠癌早期筛查，让生活更健康!</h2>
     </div>
 </section>
@@ -20,11 +20,11 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-6">
-                <img class="single-img" src="{% static "img/colon.png" %}" alt="" />
+                <img src="{% static "img/colon.png" %}" alt="" />
             </div>
             <div class="col-xs-6">
                 <h2>大肠癌</h2>
-                <p class="subtitle">使用常易舒<sup>TM</sup>大肠癌早期无创筛查服务</p>
+                <h3>使用常易舒<sup>TM</sup>大肠癌早期无创筛查服务</h3>
                 <a href="/colon" class="hl-btn hl-btn-green">了解大肠癌</a>
             </div>
         </div>
@@ -34,15 +34,13 @@
 <section id="service" class="home-section text-left bg-white">
     <div class="container">
         <div class="row">
-            <div class="col-xs-6">
+            <div class="col-sm-6">
                 <h2>产品介绍</h2>
-                <p class="subtitle">基因技术提前数年发现癌前病变和大肠癌</p>
-                <div style="float: left">
-                    <a href="/product" class="hl-btn hl-btn-green">了解产品</a>
-                </div>
+                <h3>基因技术提前数年发现癌前病变和大肠癌</h3>
+                <a href="/product" class="hl-btn hl-btn-green">了解产品</a>
             </div>
-            <div class="col-xs-6">
-                <img class="single-img" src="{% static "img/service.png" %}" alt="" />
+            <div class="col-sm-6">
+                <img src="{% static "img/service.png" %}" alt="" />
             </div>
         </div>
     </div>
@@ -51,10 +49,10 @@
 <section id="process" class="home-section text-right bg-white">
         <div class="container">
             <div class="row">
-                <div class="col-sm-8 sidebar">
-                    <img class="single-img" src="{% static "img/flow.png" %}" alt="">
+                <div class="col-sm-8">
+                    <img src="{% static "img/flow.png" %}" alt="">
                 </div>
-                <div class="col-sm-4 content text-right">
+                <div class="col-sm-4">
                     <h2>使用流程</h2>
                     <h3>无创无痛、简便易用</h3>
                     <a href="/product/process" class="hl-btn hl-btn-green">查看使用方法</a>
@@ -66,15 +64,13 @@
 <section id="report" class="home-section text-left bg-gray">
     <div class="container">
         <div class="row">
-            <div class="col-xs-6">
+            <div class="col-sm-6">
                 <h2>检测报告</h2>
                 <h3>精准、简明、易懂</h3>
-                <div style="float: left">
-                    <a href="/report" class="hl-btn hl-btn-green">报告优点</a>
-                </div>
+                <a href="/report" class="hl-btn hl-btn-green">报告优点</a>
             </div>
-            <div class="col-xs-6">
-                <img class="single-img" src="{% static "img/feature.png" %}" alt="" />
+            <div class="col-sm-6">
+                <img src="{% static "img/feature.png" %}" alt="" />
             </div>
         </div>
     </div>
@@ -83,8 +79,8 @@
 <section id="new" class="home-section text-left bg-info">
     <div class="container ">
         <div class="row ">
-            <div class="col-md-6">
-                <h1>行业动态</h1>
+            <div class="col-sm-6">
+                <h2>行业动态</h2>
                     {% blog_recent_posts limit=4 category="行业动态" as recent_posts %}
                     {% if recent_posts %}
                         {% for recent_post in recent_posts %}
@@ -107,8 +103,8 @@
                         <a href="/blog/category/industry" class="hl-btn hl-btn-green">了解更多</a>
                     </div>
             </div>
-            <div class="col-md-6">
-                <h1>公司新闻</h1>
+            <div class="col-sm-6">
+                <h2>公司新闻</h2>
                     {% blog_recent_posts limit=4 category="公司新闻" as recent_posts %}
                     {% if recent_posts %}
                         {% for recent_post in recent_posts %}
@@ -141,7 +137,7 @@
     <div class="container ">
         <div class="row ">
             <div class="col-md-12">
-                    <h1>常见问题</h1>
+                    <h2>常见问题</h2>
                         {% blog_recent_posts limit=1 category="faq" as recent_posts %}
                         {% if recent_posts %}
                             {% for recent_post in recent_posts %}

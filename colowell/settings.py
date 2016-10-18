@@ -82,7 +82,7 @@ DEVICE_USER_AGENTS = (
     ("mobile", ("Android", "BlackBerry", "iPhone")),
     ("desktop", ("Windows", "Macintosh", "Linux")),
 )
-
+# DEVICE_DEFAULT = "desktop"
 # Setting to turn on featured images for blog posts. Defaults to False.
 #
 # BLOG_USE_FEATURED_IMAGE = True
@@ -256,7 +256,7 @@ INSTALLED_APPS = (
     "mezzanine.galleries",
     "mezzanine.twitter",
     "mezzanine.accounts",
-    "mezzanine.mobile",
+    # "mezzanine.mobile",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,
