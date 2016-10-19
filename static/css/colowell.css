@@ -146,8 +146,8 @@ fieldset[disabled] .hl-btn-green.active {
 ============================ */
 .navbar-brand {
     font-weight: 700;
-    height: 2.22em;
-    padding: .5em 1.5em;
+    height: 1.7em;
+    padding: .2em 1.1em;
     font-size: 1.8rem;
     line-height: 1;
 }
