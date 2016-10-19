@@ -1,0 +1,92 @@
+{% extends "secbase.html" %}
+{% load i18n mezzanine_tags %}
+
+{% block meta_title %}{{ title }}{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+{% block body_id %}account{% endblock %}
+
+{% block breadcrumb_menu %}
+    {{ block.super }}
+    <li>{{ title }}</li>
+{% endblock %}
+
+{% block main %}
+
+
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">{% trans "My COLOWELL" %}</h3>
+        </div>
+        {% if bind_lists|length == 0 %}
+            <div class="panel-body">
+                {% trans "This is the first time you use 'COLOWELL', click 'New sample' to bind your sample:" %}
+            </div>
+        {% else %}
+            <div class="panel-body">
+                {% trans "Thank you for your choose 'COLOWELL', here lists all your samples:" %}
+            </div>
+
+            <table class="table table-hover">
+                <th>{% trans "Full name" %}</th>
+                <th>{% trans "Sample code" %}</th>
+                <th>{% trans "From date" %}</th>
+                <th>{% trans "Status" %}</th>
+                {#       <th>{% trans "Report" %}</th>#}
+                {% for bind_list in bind_lists %}
+                    <tr>
+                        <td>{{ bind_list.full_name }}</td>
+                        <td>
+                            {% if bind_list.status_node == "FIN" %}
+                                <a href="/exam_report/{{ bind_list.code }}" target="_blank">{{ bind_list.code }}</a>
+                            {% else %}
+                                {{ bind_list.code }}
+                            {% endif %}
+                        </td>
+                        <td>{% firstof bind_list.finish_date bind_list.analysis_date bind_list.receive_date bind_list.submit_date %}</td>
+                        <td>
+                            <div class="progress progress-striped active">
+
+                                {% if bind_list.status_node == "SAM" %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar"
+                                         aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: 25%;">
+                                        <span class="">{% trans "Sampling" %}</span>
+                                    </div>
+                                    {% elif bind_list.status_node == "REC" %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar"
+                                         aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: 50%;">
+                                        <span class="">{% trans "Received" %}</span>
+                                    </div>
+                                    {% elif bind_list.status_node == "ING" %}
+                                    <div class="progress-bar progress-bar-info" role="progressbar"
+                                         aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: 75%;">
+                                        <span class="">{% trans "Analysing" %}</span>
+                                    </div>
+                                    {% elif bind_list.status_node == "FIN" %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar"
+                                         aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: 100%;">
+                                        <span class="">{% trans "Finished" %}</span>
+                                    </div>
+                                {% endif %}
+
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <div class="panel-footer">
+                {% trans "Tips: When the status is finished, you can click on the sample code to view your report" %}
+            </div>
+        {% endif %}
+    </div>
+    <div class="text-center">
+        <a href="/sample_bind/bind" class="hl-btn hl-btn-green">{% trans "New sample" %}</a>
+    </div>
+{% endblock %}
+
+{% block right_panel %}
+    {% include "blog/includes/filter_panel.html" %}
+{% endblock %}

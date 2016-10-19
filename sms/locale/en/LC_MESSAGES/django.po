@@ -1,0 +1,29 @@
+# django-simple-captcha French translation.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Patrick Samson <maxcom@laposte.net>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-simple-captcha 0.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-17 09:58+0800\n"
+"PO-Revision-Date: 2010-09-16 12:16+0200\n"
+"Last-Translator: Marco Bonetti <mbonetti@gmail.com>\n"
+"Language-Team: en <mbonetti@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+
+#: fields.py:148 fields.py:183
+msgid "Invalid CAPTCHA"
+msgstr ""
+
+#: models.py:31
+msgid "Telephone number"
+msgstr ""
+
+#~ msgid "Play CAPTCHA as audio file"
+#~ msgstr "Play CAPTCHA as audio file"

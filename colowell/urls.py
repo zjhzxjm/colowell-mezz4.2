@@ -38,6 +38,10 @@ urlpatterns += [
     # one out.
 
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
+    url("^", include("mezzanine.accounts.urls"), name="accounts"),
+    # url("^blog", include("mezzanine.blog.urls"), name="blog"),
+    url("^sample_bind/", include("sample_bind.urls"), name="sample_bind"),
+    url(r'^sms/', include('sms.urls')),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------

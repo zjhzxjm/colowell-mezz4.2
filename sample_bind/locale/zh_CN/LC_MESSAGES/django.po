@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-29 15:18+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: admin.py:71 admin.py:128
+#, python-format
+msgid "%s 's sms has been sent successfully"
+msgstr "%s 短信已发送"
+
+#: admin.py:75 admin.py:94 admin.py:131
+msgid "1 sample was"
+msgstr "1个样品被"
+
+#: admin.py:77 admin.py:96 admin.py:133
+#, python-format
+msgid "%s samples were"
+msgstr "%s 个样品被"
+
+#: admin.py:78
+#, python-format
+msgid "%s successfully marked as sample received,"
+msgstr "%s 标记为已收样"
+
+#: admin.py:80 admin.py:136
+#, fuzzy, python-format
+msgid "Fail to send sms: %s 's phone %s, Error: %s"
+msgstr "未成功发送短信：%s 的手机号 %s"
+
+#: admin.py:82
+msgid "Make selected samples as received"
+msgstr "标记所选的样品为已收样"
+
+#: admin.py:97
+#, python-format
+msgid "%s successfully marked as analysing,"
+msgstr "%s 标记为分析中"
+
+#: admin.py:98
+msgid "Make selected samples as analysing"
+msgstr "标记所选的样品为分析中"
+
+#: admin.py:134
+#, python-format
+msgid "%s successfully marked as finished"
+msgstr "%s 标记为已完成"
+
+#: admin.py:138
+msgid "Make selected samples as finished"
+msgstr "标记所选的样品为已完成"
+
+#: admin.py:144
+msgid "Customer information"
+msgstr ""
+
+#: admin.py:172
+msgid "1 code was"
+msgstr "1个样品编号"
+
+#: admin.py:174
+#, python-format
+msgid "%s codes were"
+msgstr "%s 个样品编号被"
+
+#: admin.py:175
+#, python-format
+msgid "%s successfully marked as sold,"
+msgstr "%s 标记为已售出"
+
+#: admin.py:176
+msgid "Make selected codes as sold"
+msgstr "标记所选的样品编号为已售出"
+
+#: apps.py:7
+msgid "Sample Bind Manage"
+msgstr "样品绑定管理"
+
+#: forms.py:15
+msgid "This code has been bound"
+msgstr "该样品编号已被绑定"
+
+#: forms.py:20
+msgid "Invalid sample code"
+msgstr "无效的样品编号"
+
+#: forms.py:36 models.py:12 models.py:29 templates/sample_bind/index.html:31
+msgid "Sample code"
+msgstr "样品编号"
+
+#: forms.py:39 models.py:47 templates/sample_bind/index.html:30
+msgid "Full name"
+msgstr "姓名"
+
+#: models.py:13
+msgid "Sold out"
+msgstr "售出"
+
+#: models.py:14
+msgid "Add date"
+msgstr "添加日期"
+
+#: models.py:15
+msgid "Sold date"
+msgstr "售出日期"
+
+#: models.py:18
+msgid "code"
+msgstr "样品"
+
+#: models.py:19
+msgid "codes"
+msgstr "样品"
+
+#: models.py:30
+msgid "Submit date"
+msgstr "提交日期"
+
+#: models.py:31
+msgid "Receive date"
+msgstr "收样日期"
+
+#: models.py:32
+msgid "Receive sms send"
+msgstr "收样短信"
+
+#: models.py:33
+msgid "Analysis date"
+msgstr "分析日期"
+
+#: models.py:34
+msgid "Finish date"
+msgstr "完成日期"
+
+#: models.py:35
+msgid "Finish sms send"
+msgstr "完成短信"
+
+#: models.py:38
+msgid "User"
+msgstr "用户名"
+
+#: models.py:51 templates/sample_bind/index.html:53
+msgid "Sampling"
+msgstr "取样中"
+
+#: models.py:52 templates/sample_bind/index.html:59
+msgid "Received"
+msgstr "已收样"
+
+#: models.py:53 templates/sample_bind/index.html:65
+msgid "Analysing"
+msgstr "分析中"
+
+#: models.py:54 templates/sample_bind/index.html:71
+msgid "Finished"
+msgstr "已完成"
+
+#: models.py:56 templates/sample_bind/index.html:33
+msgid "Status"
+msgstr "进度"
+
+#: models.py:61
+msgid "bind"
+msgstr "样品绑定"
+
+#: models.py:62
+msgid "binds"
+msgstr "样品绑定"
+
+#: templates/sample_bind/index.html:18 views.py:21
+msgid "My COLOWELL"
+msgstr "我的常易舒"
+
+#: templates/sample_bind/index.html:22
+msgid ""
+"This is the first time you use 'COLOWELL', click 'New sample' to bind your "
+"sample:"
+msgstr "这是您首次选购“常易舒”，点击“新增样品”进行样品绑定操作。"
+
+#: templates/sample_bind/index.html:26
+msgid "Thank you for your choose 'COLOWELL', here lists all your samples:"
+msgstr "感谢您选购“常易舒”，以下是您所绑定的所有样品："
+
+#: templates/sample_bind/index.html:32
+msgid "From date"
+msgstr "起始时间"
+
+#: templates/sample_bind/index.html:81
+msgid ""
+"Tips: When the status is finished, you can click on the sample code to view "
+"your report"
+msgstr "温馨提示：当进度为已完成时，您可以点击样品编号查看检测报告！"
+
+#: templates/sample_bind/index.html:86
+msgid "New sample"
+msgstr "新增样品"
+
+#: views.py:48
+msgid "Bind the sample code successfully"
+msgstr "您已成功样品编号"
+
+#: views.py:53
+msgid "Sample bind"
+msgstr "样品绑定"

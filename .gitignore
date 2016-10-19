@@ -4,4 +4,6 @@
 .DS_Store
 .coverage
 local_settings.py
-/static
+sms/conf/settings.py
+static/media/uploads/
+src/

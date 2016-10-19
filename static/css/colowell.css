@@ -1,0 +1,393 @@
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "Lantinghei SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei Light", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-weight: 300;
+    color: #666;
+    background-color: #fff;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 100%;
+}
+
+.bg-white {
+    background-color: #fff
+}
+
+.bg-gray {
+    background-color: #f2f4f5
+}
+
+a,.pagination > li > a, .pagination > li > span {
+    color: #28c3ab
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    color: #176e61;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover,
+.pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color: #28c3ab;
+    border-color: #28c3ab;
+}
+.blog-list-detail {
+    border-bottom: 1px dashed #CCCCCC;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+}
+/* ===== Input ===== */
+.account-form input, .form-group input {
+    width: 100%;
+    max-width: 100% !important;
+}
+/* ===== Buttons ===== */
+.hl-btn {
+    border-radius: 4px;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.hl-btn:focus {
+    outline: thin dotted #333;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.hl-btn:hover,
+.hl-btn:focus {
+    color: #333333;
+    text-decoration: none;
+}
+
+.hl-btn:active,
+.hl-btn.active {
+    outline: 0;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.hl-btn.disabled,
+.hl-btn[disabled],
+fieldset[disabled] .btn {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* 2. Green Button */
+.hl-btn-green {
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #72a53b;
+    border-color: #72a53b;
+}
+
+.hl-btn-green:hover,
+.hl-btn-green:focus,
+.hl-btn-green:active,
+.hl-btn-green.active,
+.open .dropdown-toggle.hl-btn-green {
+    color: #ffffff;
+    background-color: #5d8731;
+    border-color: #5d8731;
+}
+
+.hl-btn-green:active,
+.hl-btn-green.active,
+.open .dropdown-toggle.hl-btn-green {
+    background-image: none;
+}
+
+.hl-btn-green.disabled,
+.hl-btn-green[disabled],
+fieldset[disabled] .hl-btn-green,
+.hl-btn-green.disabled:hover,
+.hl-btn-green[disabled]:hover,
+fieldset[disabled] .hl-btn-green:hover,
+.hl-btn-green.disabled:focus,
+.hl-btn-green[disabled]:focus,
+fieldset[disabled] .hl-btn-green:focus,
+.hl-btn-green.disabled:active,
+.hl-btn-green[disabled]:active,
+fieldset[disabled] .hl-btn-green:active,
+.hl-btn-green.disabled.active,
+.hl-btn-green[disabled].active,
+fieldset[disabled] .hl-btn-green.active {
+    background-color: #AFD487;
+    border-color: #AFD487;
+}
+
+/* ===========================
+--- Nav
+============================ */
+.navbar-brand {
+    font-weight: 700;
+    height: 2.22em;
+    padding: .5em 1.5em;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.navbar-text {
+    color: whitesmoke;
+}
+
+.navbar-brand:focus {
+    outline: 0;
+}
+
+.navbar-nav {
+    background-color: rgba(255, 255, 255, .4);
+}
+
+.top-nav-collapse .navbar-nav {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.top-nav-collapse {
+    background: #67b0d1;
+}
+
+.navbar-custom ul.nav li a {
+    /*font-size: 1.2rem;*/
+    letter-spacing: 0.1em;
+    color: #444;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.navbar-custom.top-nav-collapse ul.nav li a {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    color: #fff;
+}
+
+.navbar-custom ul.nav ul.dropdown-menu {
+    border-radius: 0;
+}
+
+.navbar-custom ul.nav ul.dropdown-menu li {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.navbar-custom ul.nav ul.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.navbar-custom ul.nav ul.dropdown-menu li a {
+    padding: 10px 20px;
+}
+
+.navbar-custom ul.nav ul.dropdown-menu li a:hover {
+    background: #fefefe;
+}
+
+.navbar-custom.top-nav-collapse ul.nav ul.dropdown-menu li a {
+    color: #666;
+}
+
+.navbar-custom .nav li a {
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+
+.navbar-custom .nav li a:hover,
+.navbar-custom .nav li a:focus,
+.navbar-custom .nav li.active {
+    outline: 0;
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.navbar-custom .nav li a:hover,
+.navbar-custom .nav li a:focus,
+.navbar-custom .nav li.active {
+    outline: 0;
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.navbar-toggle {
+    padding: 4px 6px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.navbar-toggle:focus,
+.navbar-toggle:active {
+    outline: 0;
+}
+
+/* ===========================
+--- Home intro
+============================ */
+#intro {
+    position: relative;
+    padding: 20% 0;
+    text-align: center;
+}
+
+#intro .slogan h1 {
+    padding-bottom: .5em;
+    text-shadow: -.09em 0 .14em #000;
+}
+
+#intro .slogan h2 {
+    text-shadow: -.14em 0 .23em #000;
+}
+
+#intro .slogan h1, #intro .slogan h2 {
+    color: #fff;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+#intro .slogan sup {
+    font-size: small;
+    vertical-align: text-top;
+}
+
+/* ===========================
+--- Home sections
+============================ */
+.home-section {
+    position: relative;
+    padding: 5% 0;
+    overflow: hidden
+}
+
+.home-section img {
+    max-width: 100%;
+}
+
+.home-section h2 {
+    margin: 1em 0 .35em;
+    line-height: 1;
+    color: #9b8452;
+}
+
+.home-section h3 {
+    margin: 0 0 .53em;
+    line-height: 1;
+    color: #505e73;
+}
+
+.home-section p {
+    color: #808080;
+    margin: 1em 0;
+    line-height: 1.5
+}
+
+.home-section .btn {
+    width: 12em;
+    background: #8ddcde
+}
+
+#new h2 {
+    color: #0b0b0b
+}
+
+#colon img, #process img {
+    margin-left: -225px;
+}
+
+/* ===========================
+--- Footer
+============================ */
+footer {
+    text-align: center;
+    padding: 5em 0;
+    background-color: #67b0d1;
+    color: white;
+    font-weight: 300;
+}
+
+footer p {
+    color: #f8f8f8;
+}
+
+/* ===========================
+--- Media queries
+============================ */
+@media only screen and (min-width: 518px) {
+    .navbar {
+        padding: 2em 0;
+        border-bottom: 0;
+        letter-spacing: 0.1em;
+        -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        transition: background .5s ease-in-out, padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+        background-color: #67b0d1;
+    }
+
+    .top-nav-collapse {
+        border-bottom: 1px solid rgba(255, 255, 255, .3);
+    }
+
+    #intro {
+        height: 100%;
+        width: 100%;
+        background: url("../img/Intro_Desktop.png") no-repeat top center;
+    }
+    #intro h1 {
+        font-size: 4rem;
+    }
+    #intro h2 {
+        font-size: 2.3rem;
+    }
+}
+
+@media only screen and (max-width: 518px) {
+    #intro {
+        background: url("../img/Intro_Mobile.png") no-repeat top center;
+    }
+    #intro h1 {
+        font-size: 2rem;
+    }
+    #intro h2, .home-section h2 {
+        font-size: 1.5rem;
+    }
+    .home-section h3 {
+        font-size: 1.1rem;
+    }
+    .navbar-custom .nav.navbar-nav {
+        background-color: rgba(255, 255, 255, .4);
+    }
+
+    .navbar.navbar-custom.navbar-fixed-top {
+        margin-bottom: 30px;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+        background-color: #67b0d1;
+    }
+}
