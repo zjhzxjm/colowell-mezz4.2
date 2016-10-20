@@ -360,7 +360,7 @@ footer p {
     #intro {
         height: 100%;
         width: 100%;
-        background: url("../img/Intro_Desktop.png") no-repeat top center;
+        background: url("../img/Intro_Desktop.jpg") no-repeat top center;
     }
     #intro h1 {
         font-size: 4rem;
@@ -372,7 +372,7 @@ footer p {
 
 @media only screen and (max-width: 518px) {
     #intro {
-        background: url("../img/Intro_Mobile.png") no-repeat top center;
+        background: url("../img/Intro_Mobile.jpg") no-repeat top center;
     }
     #intro h1 {
         font-size: 2rem;
