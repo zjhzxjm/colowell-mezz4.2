@@ -257,10 +257,12 @@ fieldset[disabled] .hl-btn-green.active {
 #intro .slogan h1 {
     padding-bottom: .5em;
     text-shadow: -.09em 0 .14em #000;
+    font-family: 'jdzhonyuanjiand50a62ef44e2';
 }
 
 #intro .slogan h2 {
     text-shadow: -.14em 0 .23em #000;
+    font-family: 'jdzhonyuanjiand50a62ef44e2';
 }
 
 #intro .slogan h1, #intro .slogan h2 {
