@@ -155,7 +155,8 @@ fieldset[disabled] .hl-btn-green.active {
 }
 
 .navbar-text {
-    color: whitesmoke;
+    color: whitesmoke !important;
+    font-style: normal;
 }
 
 .navbar-brand:focus {
