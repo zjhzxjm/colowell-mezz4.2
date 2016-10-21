@@ -258,8 +258,16 @@ INSTALLED_APPS = (
     "mezzanine.forms",
     "mezzanine.galleries",
     "mezzanine.twitter",
-    "mezzanine.accounts",
+    "accounts",
     # "mezzanine.mobile",
+)
+
+# sms user profile
+ACCOUNTS_PROFILE_MODEL = "sms.MyProfile"
+ACCOUNTS_PROFILE_FORM_CLASS = 'accounts.forms.ProfileForm'
+ACCOUNTS_PROFILE_FORM_EXCLUDE_FIELDS = (
+    "first_name",
+    "last_name",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,

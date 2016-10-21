@@ -48,6 +48,11 @@ a:hover, a:focus {
     width: 100%;
     max-width: 100% !important;
 }
+.account-form input[type="checkbox"] {
+    display: inline;
+    width: auto;
+    margin-right: 5px;
+}
 /* ===== Buttons ===== */
 .hl-btn {
     border-radius: 4px;
