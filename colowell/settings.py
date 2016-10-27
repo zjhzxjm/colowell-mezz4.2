@@ -241,6 +241,7 @@ INSTALLED_APPS = (
     "sample_bind",
     "sms",
     "import_export",
+    "exam_report",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

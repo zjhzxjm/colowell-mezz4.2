@@ -41,6 +41,7 @@ urlpatterns += [
     url("^", include("accounts.urls"), name="accounts"),
     # url("^blog", include("mezzanine.blog.urls"), name="blog"),
     url("^sample_bind/", include("sample_bind.urls"), name="sample_bind"),
+    url('^exam_report/', include("exam_report.urls"), name="exam_report"),
     url(r'^sms/', include('sms.urls')),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
