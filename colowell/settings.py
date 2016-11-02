@@ -270,6 +270,7 @@ ACCOUNTS_PROFILE_FORM_EXCLUDE_FIELDS = (
     "first_name",
     "last_name",
 )
+LOGIN_REDIRECT_URL = "/sample_bind"
 
 # List of middleware classes to use. Order is important; in the request phase,
 # these middleware classes will be applied in the order given, and in the

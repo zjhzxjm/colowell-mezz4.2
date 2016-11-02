@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from sample_bind.models import Bind
+from mezzanine.core.fields import RichTextField
 
 # Create your models here.
 
@@ -10,11 +11,11 @@ class Report(models.Model):
     muta_rate = models.FloatField(_("Mutation rate"))
     hgb = models.FloatField(_("HGB"))
     bind = models.OneToOneField(Bind, verbose_name=_("Sample code"))
-    explanation = models.TextField()
+    explanation =RichTextField(_("Explanation"))
 
     class Meta:
         verbose_name = _("report")
         verbose_name_plural = _("reports")
 
     def __str__(self):
-        return "%s %s %s" % (self.risk, self.muta_rate, self.hgb)
+        return "%s" % self.bind

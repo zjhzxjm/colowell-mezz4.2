@@ -17,7 +17,8 @@ def report(request, sample_code=None, template="exam_report/report.html"):
         bind_lists = Bind.objects.filter(code=Code.objects.filter(sample_code=sample_code)[0].id).filter(user_id=
                                                                                                          request.user.id)
         report_lists = Report.objects.filter(bind=bind_lists[0].id)
-        context = {'report_list': report_lists[0], 'bind_list': bind_lists[0], 'title':_('Colon Examing Report')}
+        progress_rate = report_lists[0].risk/15*100
+        context = {'progress_rate': progress_rate, 'report_list': report_lists[0], 'bind_list': bind_lists[0], 'title': _('Colon Examing Report')}
     except IndexError:
         raise Http404
 

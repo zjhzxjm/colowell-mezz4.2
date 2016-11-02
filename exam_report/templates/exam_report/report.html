@@ -7,14 +7,14 @@
 
 {% block breadcrumb_menu %}
     {{ block.super }}
-    <li>{{ title }}({{ bind_list.full_name }})</li>
+    <li>{{ title }}({{ bind_list.full_name }}-{{ bind_list.code }})</li>
 {% endblock %}
 
 {% block main %}
 
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h3 class="panel-title">检测内容</h3>
+            <h3 class="panel-title"><i class="heartbeat icon"></i>检测内容</h3>
         </div>
         <div class="panel-body">
             A：大肠癌相关基因突变位点、甲基化位点 ：利用先进的基因检测技术分析粪便样本中脱落癌细胞DNA标志物。
@@ -25,30 +25,53 @@
 
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h3 class="panel-title">检测结果</h3>
+            <h3 class="panel-title"><i class="browser icon"></i>检测结果</h3>
         </div>
         <div class="panel-body">
-            <div class="ui teal statistics">
+            <div class="col-md-5 ui mini teal statistics">
                 <div class="statistic">
                     <div class="value">
-                        {% if report_list.pos_neg == "N" %}
-                            阴性
-                        {% else %}
-                            阳性
-                        {% endif %}
+                        {{ report_list.muta_rate }}
                     </div>
                     <div class="label">
-                        您的检测结果
+                        突变比例（%）
                     </div>
                 </div>
                 <div class="statistic">
                     <div class="value">
-                        {{ report_list.risk }}
+                        {{ report_list.hgb }}
                     </div>
                     <div class="label">
-                        患病风险倍数
+                        血红蛋白(ug/ml)
                     </div>
                 </div>
+            </div>
+            <div class="progress-label">
+                患病风险倍数：
+            </div>
+            <div class="progress">
+                {% if report_list.risk <= 0.8 %}
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow={{ progress_rate }} aria-valuemin="0" aria-valuemax="100" style="min-width: 7em;width:{{ progress_rate }}%">
+                        {{ report_list.risk }}-低于平均
+                    </div>
+                {% elif report_list.risk > 0.8 and report_list.risk <= 1.2 %}
+                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow={{ progress_rate }} aria-valuemin="0" aria-valuemax="100" style="min-width: 7em;width:{{ progress_rate }}%">
+                        {{ report_list.risk }}-平均风险
+                    </div>
+                {% elif report_list.risk > 1.2 and report_list.risk <= 5 %}
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow={{ progress_rate }} aria-valuemin="0" aria-valuemax="100" style="min-width: 7em;width:{{ progress_rate }}%">
+                        {{ report_list.risk }}-低风险
+                    </div>
+                {% elif report_list.risk > 5 and report_list.risk <= 15 %}
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={{ progress_rate }} aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width:{{ progress_rate }}%">
+                        {{ report_list.risk }}-中等风险
+                    </div>
+                {% else %}
+                    <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow={{ progress_rate }} aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;width:{{ progress_rate }}%">
+                        {{ report_list.risk }}-高风险
+                    </div>
+                {% endif %}
+
             </div>
         </div>
         <div class="panel-footer">
@@ -60,13 +83,13 @@
 
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h3 class="panel-title">结果解读</h3>
+            <h3 class="panel-title"><i class="doctor icon"></i>结果解读</h3>
         </div>
         <div class="panel-body">
-            {{ report_list.explanation }}
+            {{ report_list.explanation|richtext_filters|safe }}
         </div>
         <div class="panel-footer">
-            大肠癌平均发病率约为37.6/100000。
+            大肠癌平均发病率约为37.6/100000
         </div>
     </div>
 {% endblock %}
