@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 13:11+0800\n"
+"POT-Creation-Date: 2016-11-08 16:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,34 +25,37 @@ msgstr "报告管理"
 msgid "Exam Report Manage"
 msgstr "检测报告管理"
 
-#: .\models.py:9
+#: .\models.py:10
 msgid "Multiple_Risk"
 msgstr "患病风险倍数"
 
-#: .\models.py:10
-msgid "Mutation rate"
-msgstr "突变比例"
-
 #: .\models.py:11
-msgid "HGB"
-msgstr "血红蛋白含量"
+msgid "Mutation rate(%)"
+msgstr "突变比例(%)"
 
 #: .\models.py:12
+msgid "HGB(ug/ml)"
+msgstr "血红蛋白(ug/ml)"
+
+#: .\models.py:13
 msgid "Sample code"
 msgstr "样品编号"
 
-#: .\models.py:13
+#: .\models.py:14
 msgid "Explanation"
 msgstr "结果解读"
 
-#: .\models.py:16
+#: .\models.py:17
 msgid "report"
 msgstr "报告"
 
-#: .\models.py:17
+#: .\models.py:18
 msgid "reports"
 msgstr "报告"
 
 #: .\views.py:21
 msgid "Colon Examing Report"
 msgstr "大肠癌检测报告"
+
+#~ msgid "HGB"
+#~ msgstr "血红蛋白含量"

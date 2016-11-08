@@ -8,8 +8,8 @@ from mezzanine.core.fields import RichTextField
 
 class Report(models.Model):
     risk = models.FloatField(_("Multiple_Risk"))
-    muta_rate = models.FloatField(_("Mutation rate"))
-    hgb = models.FloatField(_("HGB"))
+    muta_rate = models.FloatField(_("Mutation rate(%)"))
+    hgb = models.FloatField(_("HGB(ug/ml)"))
     bind = models.OneToOneField(Bind, verbose_name=_("Sample code"))
     explanation = RichTextField(_("Explanation"))
 
