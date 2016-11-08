@@ -26,6 +26,12 @@ class Bind(models.Model):
     """
     Bind class
     """
+    STATUS_NODE = (
+        ('SAM', _("Sampling")),
+        ('REC', _("Received")),
+        ('ING', _("Analysing")),
+        ('FIN', _("Finished")),
+    )
     code = models.OneToOneField(Code, verbose_name=_("Sample code"))
     submit_date = models.DateTimeField(_("Submit date"), auto_now_add=True)
     receive_date = models.DateTimeField(_("Receive date"), null=True)
@@ -33,7 +39,6 @@ class Bind(models.Model):
     analysis_date = models.DateTimeField(_("Analysis date"), null=True)
     finish_date = models.DateTimeField(_("Finish date"), null=True)
     finish_sms = models.BooleanField(_("Finish sms send"), default=False)
-    # status_date = models.DateTimeField(auto_now=True)
 
     user = models.ForeignKey(User, verbose_name=_("User"))
     # RELATION_NAME = (
@@ -47,12 +52,7 @@ class Bind(models.Model):
     full_name = models.CharField(_("Full name"), max_length=10)
     # relation_name = models.CharField(max_length=2,
     #                                  choices=RELATION_NAME)
-    STATUS_NODE = (
-        ('SAM', _("Sampling")),
-        ('REC', _("Received")),
-        ('ING', _("Analysing")),
-        ('FIN', _("Finished")),
-    )
+
     status_node = models.CharField(_("Status"), max_length=3,
                                    choices=STATUS_NODE,
                                    default='SAM')

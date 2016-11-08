@@ -11,7 +11,7 @@ class Report(models.Model):
     muta_rate = models.FloatField(_("Mutation rate"))
     hgb = models.FloatField(_("HGB"))
     bind = models.OneToOneField(Bind, verbose_name=_("Sample code"))
-    explanation =RichTextField(_("Explanation"))
+    explanation = RichTextField(_("Explanation"))
 
     class Meta:
         verbose_name = _("report")
