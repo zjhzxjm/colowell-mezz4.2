@@ -48,8 +48,8 @@ class BindAdmin(admin.ModelAdmin):
         :param queryset:
         :return:
         """
+        resp = ''
         for obj in queryset:
-            # print(MyProfile.objects.get(user_id=obj.user_id).mobile_phone)
             phone_num = int(MyProfile.objects.get(user_id=obj.user_id).mobile_phone)
             full_name = obj.full_name
             sample_code = obj.code.sample_code
@@ -60,7 +60,6 @@ class BindAdmin(admin.ModelAdmin):
             req = top.api.AlibabaAliqinFcSmsNumSendRequest()
             req.set_app_info(top.appinfo(appkey, secret))
 
-            # req.extend = "123456"
             req.sms_type = "normal"
             req.sms_free_sign_name = "锐翌医学"
             req.sms_param = json.dumps({'name': full_name, 'code': sample_code})
@@ -69,16 +68,16 @@ class BindAdmin(admin.ModelAdmin):
             try:
                 resp = req.getResponse()
                 self.message_user(request, _("%s 's sms has been sent successfully") % full_name)
-                rows_updated = queryset.update(status_node='REC', receive_date=now(), receive_sms=True,
-                                               analysis_date=None, finish_date=None)
-                if rows_updated == 1:
-                    message_bit = _("1 sample was")
-                else:
-                    message_bit = _("%s samples were") % rows_updated
-                self.message_user(request, _("%s successfully marked as sample received,") % message_bit)
             except Exception as e:
                 self.message_user(request, _("Fail to send sms: %s 's phone %s, Error: %s") % (full_name, phone_num, e))
-
+        if resp:
+            rows_updated = queryset.update(status_node='REC', receive_date=now(), receive_sms=True, analysis_date=None,
+                                           finish_date=None, finish_sms=False)
+            if rows_updated == 1:
+                message_bit = _("1 sample was")
+            else:
+                message_bit = _("%s samples were") % rows_updated
+            self.message_user(request, _("%s successfully marked as sample received,") % message_bit)
     make_rec.short_description = _("Make selected samples as received")
 
     def make_ing(self, request, queryset):
@@ -89,7 +88,7 @@ class BindAdmin(admin.ModelAdmin):
         :param queryset:
         :return:
         """
-        rows_updated = queryset.update(status_node='ING', analysis_date=now(), finish_date=None)
+        rows_updated = queryset.update(status_node='ING', analysis_date=now(), finish_date=None, finish_sms=False)
         if rows_updated == 1:
             message_bit = _("1 sample was")
         else:
@@ -105,8 +104,8 @@ class BindAdmin(admin.ModelAdmin):
         :param queryset:
         :return:
         """
+        resp = ''
         for obj in queryset:
-            # print(MyProfile.objects.get(user_id=obj.user_id).mobile_phone)
             phone_num = int(MyProfile.objects.get(user_id=obj.user_id).mobile_phone)
             full_name = obj.full_name
             sample_code = obj.code.sample_code
@@ -117,7 +116,6 @@ class BindAdmin(admin.ModelAdmin):
             req = top.api.AlibabaAliqinFcSmsNumSendRequest()
             req.set_app_info(top.appinfo(appkey, secret))
 
-            # req.extend = "123456"
             req.sms_type = "normal"
             req.sms_free_sign_name = "锐翌医学"
             req.sms_param = json.dumps({'name': full_name, 'code': sample_code})
@@ -126,15 +124,15 @@ class BindAdmin(admin.ModelAdmin):
             try:
                 resp = req.getResponse()
                 self.message_user(request, _("%s 's sms has been sent successfully") % full_name)
-                rows_updated = queryset.update(status_node='FIN', finish_date=now(), finish_sms=True)
-                if rows_updated == 1:
-                    message_bit = _("1 sample was")
-                else:
-                    message_bit = _("%s samples were") % rows_updated
-                self.message_user(request, _("%s successfully marked as finished") % message_bit)
             except Exception as e:
                 self.message_user(request, _("Fail to send sms: %s 's phone %s, Error: %s") % (full_name, phone_num, e))
-
+        if resp:
+            rows_updated = queryset.update(status_node='FIN', finish_date=now(), finish_sms=True)
+            if rows_updated == 1:
+                message_bit = _("1 sample was")
+            else:
+                message_bit = _("%s samples were") % rows_updated
+            self.message_user(request, _("%s successfully marked as finished") % message_bit)
     make_fin.short_description = _("Make selected samples as finished")
 
     fieldsets = (
