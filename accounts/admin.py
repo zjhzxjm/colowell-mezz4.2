@@ -55,7 +55,7 @@ class UserProfileAdmin(SitePermissionUserAdmin):
                 req.sms_free_sign_name = "锐翌医学"
                 req.sms_param = json.dumps({'username': username})
                 req.rec_num = phone_num
-                req.sms_template_code = "SMS_12010003"
+                req.sms_template_code = "SMS_25710337"
                 try:
                     resp = req.getResponse()
                     self.message_user(request, _("%s 's sms has been sent successfully") % username)

@@ -120,7 +120,7 @@ class BindAdmin(admin.ModelAdmin):
             req.sms_free_sign_name = "锐翌医学"
             req.sms_param = json.dumps({'name': full_name, 'code': sample_code})
             req.rec_num = phone_num
-            req.sms_template_code = "SMS_12841789"
+            req.sms_template_code = "SMS_25565373"
             try:
                 resp = req.getResponse()
                 self.message_user(request, _("%s 's sms has been sent successfully") % full_name)
