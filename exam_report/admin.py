@@ -9,6 +9,7 @@ class ReportAdmin(admin.ModelAdmin):
     list_display = ("bind", "risk", "muta_rate", "hgb")
     list_editable = ("risk", "muta_rate", "hgb")
     list_per_page = 15
+    raw_id_fields = ('bind',)
 
     fieldsets = (
         (None, {

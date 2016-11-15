@@ -112,6 +112,7 @@ try:
     class BindInline(TabularDynamicInlineAdmin):
         model = Bind
         fields = ('code', 'full_name',)
+        raw_id_fields = ('code',)
         extra = 1
     UserProfileAdmin.inlines = (ProfileInline, BindInline,)
     UserProfileAdmin.fieldsets = (

@@ -157,6 +157,7 @@ class CodeAdmin(ImportExportModelAdmin):
     actions = ['make_sold']
     list_filter = ['sold_out']
     list_per_page = 15
+    search_fields = ['sample_code']
 
     def make_sold(self, request, queryset):
         """
