@@ -61,7 +61,7 @@ class BindAdmin(admin.ModelAdmin):
             req.set_app_info(top.appinfo(appkey, secret))
 
             req.sms_type = "normal"
-            req.sms_free_sign_name = "锐翌医学"
+            req.sms_free_sign_name = settings.SIGN_NAME
             req.sms_param = json.dumps({'name': full_name, 'code': sample_code})
             req.rec_num = phone_num
             req.sms_template_code = "SMS_8560712"
@@ -117,7 +117,7 @@ class BindAdmin(admin.ModelAdmin):
             req.set_app_info(top.appinfo(appkey, secret))
 
             req.sms_type = "normal"
-            req.sms_free_sign_name = "锐翌医学"
+            req.sms_free_sign_name = settings.SIGN_NAME
             req.sms_param = json.dumps({'name': full_name, 'code': sample_code})
             req.rec_num = phone_num
             req.sms_template_code = "SMS_25565373"

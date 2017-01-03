@@ -52,7 +52,7 @@ class UserProfileAdmin(SitePermissionUserAdmin):
 
                 # req.extend = "123456"
                 req.sms_type = "normal"
-                req.sms_free_sign_name = "锐翌医学"
+                req.sms_free_sign_name = sms_settings.SIGN_NAME
                 req.sms_param = json.dumps({'username': username})
                 req.rec_num = phone_num
                 req.sms_template_code = "SMS_25710337"
