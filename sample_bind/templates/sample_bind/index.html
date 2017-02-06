@@ -36,8 +36,10 @@
                     <tr>
                         <td>{{ bind_list.full_name }}</td>
                         <td>
-                            {% if bind_list.status_node == "FIN" %}
-                                <a href="/exam_report/{{ bind_list.code }}" target="_blank">{{ bind_list.code }}</a>
+                            {% if bind_list.status_node == "FIN" and bind_list.report_version == 1 %}
+                                <a href="/exam_report/1/{{ bind_list.code }}" target="_blank">{{ bind_list.code }}</a>
+                            {% elif bind_list.status_node == "FIN" and bind_list.report_version == 2 %}
+                                <a href="/exam_report/2/{{ bind_list.code }}" target="_blank">{{ bind_list.code }}</a>
                             {% else %}
                                 {{ bind_list.code }}
                             {% endif %}

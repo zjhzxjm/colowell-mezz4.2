@@ -7,9 +7,9 @@ from mezzanine.core.fields import RichTextField
 
 
 class Report(models.Model):
-    risk = models.FloatField(_("Multiple_Risk"))
-    muta_rate = models.FloatField(_("Mutation rate(%)"))
-    hgb = models.FloatField(_("HGB(ug/ml)"))
+    risk = models.FloatField(_("Multiple_Risk"), help_text='0~0.8 低于平均风险；0.8~1.2 平均风险；1.2~5 低风险；5~15 中等风险； ≥15 高风险')
+    muta_rate = models.FloatField(_("Mutation rate(%)"), help_text='不适用于贵州版本')
+    hgb = models.FloatField(_("HGB(ug/ml)"), help_text='不适用于贵州版本')
     bind = models.OneToOneField(Bind, verbose_name=_("Sample code"))
     explanation = RichTextField(_("Explanation"))
 

@@ -30,7 +30,7 @@ class BindAdmin(admin.ModelAdmin):
     Admin class for bind
     """
     list_display = ('code', 'user_id', 'full_name', 'submit_date', 'receive_date', 'receive_sms', 'analysis_date',
-                    'finish_date', 'finish_sms', 'status_node')
+                    'finish_date', 'finish_sms', 'status_node', 'report_version')
     ordering = ['-receive_date']
     date_hierarchy = 'finish_date'
     actions = ['make_rec', 'make_ing', 'make_fin', 'delete_selected']
@@ -38,6 +38,8 @@ class BindAdmin(admin.ModelAdmin):
     list_per_page = 15
     readonly_fields = ('code',)
     search_fields = ['code__sample_code', 'user__username', 'full_name']
+    list_editable = ['report_version']
+    radio_fields = {'report_version': admin.HORIZONTAL}
 
     def make_rec(self, request, queryset):
         """

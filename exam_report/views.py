@@ -9,9 +9,12 @@ from sample_bind.models import Code, Bind
 # Create your views here.
 
 
-def report(request, sample_code=None, template="exam_report/report.html"):
-    if not sample_code:
+def report(request, report_version, sample_code=None, template="exam_report/report.html"):
+    if not sample_code or not report_version:
         raise Http404
+
+    if report_version == '2':
+        template = 'exam_report/report_guizhou.html'
 
     try:
         bind_lists = Bind.objects.filter(code=Code.objects.filter(sample_code=sample_code)[0].id).filter(user_id=

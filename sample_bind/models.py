@@ -32,6 +32,11 @@ class Bind(models.Model):
         ('ING', _("Analysing")),
         ('FIN', _("Finished")),
     )
+    REPORT_VERSION = (
+        (1, "锐翌"),
+        (2, "贵州"),
+    )
+
     code = models.OneToOneField(Code, verbose_name=_("Sample code"))
     submit_date = models.DateTimeField(_("Submit date"), auto_now_add=True)
     receive_date = models.DateTimeField(_("Receive date"), null=True)
@@ -56,6 +61,8 @@ class Bind(models.Model):
     status_node = models.CharField(_("Status"), max_length=3,
                                    choices=STATUS_NODE,
                                    default='SAM')
+    report_version = models.IntegerField("报告版本",
+                                         choices=REPORT_VERSION, default=1)
 
     class Meta:
         verbose_name = _("bind")
