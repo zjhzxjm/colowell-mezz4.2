@@ -111,6 +111,7 @@ class BindAdmin(admin.ModelAdmin):
             phone_num = int(MyProfile.objects.get(user_id=obj.user_id).mobile_phone)
             full_name = obj.full_name
             sample_code = obj.code.sample_code
+            report_version = obj.report_version
 
             appkey = settings.ALIDAYU_APPKEY
             secret = settings.ALIDAYU_SECRET
@@ -122,7 +123,10 @@ class BindAdmin(admin.ModelAdmin):
             req.sms_free_sign_name = settings.SIGN_NAME
             req.sms_param = json.dumps({'name': full_name, 'code': sample_code})
             req.rec_num = phone_num
-            req.sms_template_code = "SMS_25565373"
+            if report_version == 1:
+                req.sms_template_code = "SMS_25565373"
+            elif report_version == 2:
+                req.sms_template_code = 'SMS_53790239'
             try:
                 resp = req.getResponse()
                 self.message_user(request, _("%s 's sms has been sent successfully") % full_name)

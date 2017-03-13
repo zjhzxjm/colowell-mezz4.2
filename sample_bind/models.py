@@ -54,7 +54,7 @@ class Bind(models.Model):
     #     ('SO', 'Son'),
     #     ('OT', 'Other relatives'),
     # )
-    full_name = models.CharField(_("Full name"), max_length=10)
+    full_name = models.CharField(_("Full name"), max_length=10, help_text='该字段直接用于短信通知')
     # relation_name = models.CharField(max_length=2,
     #                                  choices=RELATION_NAME)
 
