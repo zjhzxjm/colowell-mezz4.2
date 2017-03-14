@@ -126,7 +126,7 @@ class BindAdmin(admin.ModelAdmin):
             if report_version == 1:
                 req.sms_template_code = "SMS_25565373"
             elif report_version == 2:
-                req.sms_template_code = 'SMS_53790239'
+                req.sms_template_code = 'SMS_55060008'
             try:
                 resp = req.getResponse()
                 self.message_user(request, _("%s 's sms has been sent successfully") % full_name)
